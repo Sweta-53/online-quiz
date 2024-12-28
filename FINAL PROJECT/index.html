@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="home" class="flex-center flex-column">
+            <h1>Quiz App</h1>
+            <button class="btn" onclick="startQuiz()">Start Quiz</button>
+            <button class="btn" onclick="showLeaderboard()">Leaderboard</button>
+        </div>
+
+        <div id="quiz" class="hide">
+            <div id="hud">
+                <div class="hud-item">
+                    <p class="hud-prefix">Question</p>
+                    <h2 class="hud-main-text" id="questionCounter"></h2>
+                </div>
+                <div class="hud-item">
+                    <p class="hud-prefix">Timer</p>
+                    <h2 class="hud-main-text" id="timer">60</h2>
+                </div>
+                <div class="hud-item">
+                    <p class="hud-prefix">Score</p>
+                    <h2 class="hud-main-text" id="score">0</h2>
+                </div>
+            </div>
+            <h2 id="question"></h2>
+            <div class="choice-container">
+                <div class="choice-prefix">A</div>
+                <div class="choice-text" data-number="1"></div>
+            </div>
+            <div class="choice-container">
+                <div class="choice-prefix">B</div>
+                <div class="choice-text" data-number="2"></div>
+            </div>
+            <div class="choice-container">
+                <div class="choice-prefix">C</div>
+                <div class="choice-text" data-number="3"></div>
+            </div>
+            <div class="choice-container">
+                <div class="choice-prefix">D</div>
+                <div class="choice-text" data-number="4"></div>
+            </div>
+        </div>
+        <div id="end" class="flex-center flex-column hide">
+            <h1>Quiz Complete!</h1>
+            <h2 id="finalScore"></h2>
+            <form class="end-form-container">
+                <h2>Enter your name to save your score!</h2>
+                <input type="text" name="name" id="username" placeholder="Enter your name">
+                <button class="btn" onclick="saveHighScore(event)" type="submit">Save</button>
+            </form>
+            <button class="btn" onclick="startQuiz()">Play Again</button>
+            <button class="btn" onclick="goHome()">Go Home</button>
+        </div>
+        <div id="leaderboard" class="flex-center flex-column hide">
+            <h1>Leaderboard</h1>
+            <ul id="highScoresList"></ul>
+            <button class="btn" onclick="goHome()">Go Home</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
